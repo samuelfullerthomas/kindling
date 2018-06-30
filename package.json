@@ -1,0 +1,31 @@
+{
+  "name": "kindling",
+  "version": "1.0.0",
+  "description": "basic setup for a react js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "config": "^1.30.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "standard": "^11.0.1",
+    "tiny-atom": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "jest": "^23.2.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

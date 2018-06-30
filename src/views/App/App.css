@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  word-break: break-word; /* doesn't work in firefox */
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  font-size: 36px;
+  font-family: Sans-Serif;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.Hello {
+  min-width: 0;
+}
