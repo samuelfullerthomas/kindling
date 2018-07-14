@@ -14,3 +14,6 @@ bootstrap:
 test:
 	@standard
 	@$(BIN)/jest
+
+eject:
+	@rm -rf .git && git init
