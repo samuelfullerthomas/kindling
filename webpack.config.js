@@ -15,7 +15,7 @@ module.exports = {
           { loader: 'style-loader' },
           {
             loader: 'css-loader',
-            options: { modules: true }
+            options: { modules: false }
           }
         ]
       },
