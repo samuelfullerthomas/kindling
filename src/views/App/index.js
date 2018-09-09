@@ -29,7 +29,7 @@ class App extends Component {
         onMouseUp={() => { this.interval = setInterval(::this.updateText, 2000) }}
       >
         <div className='RowRowRowTheBoat'>
-          <div>
+          <div className='HelloButOusideAndUp'>
             <h1>Kindling</h1>
             <div className='Hello'>
             start something
@@ -47,7 +47,7 @@ class App extends Component {
               Check it out on Github
             </a>
           </div>
-          <img className='Bane' src='/kindling.png' />
+          <img className='Bane' src='/kindling.png' alt='Kindling logo' />
         </div>
       </div>
     )

@@ -3,7 +3,7 @@ body {
 }
 
 .TastyAppyBoy {  
-  color: #21EBF4;
+  color: #404040;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@ body {
 
 .LinkyBoy {
   margin-top: 20px;
-  color: #21EBF4;
+  color: #404040;
 }
 
 .Hello {
@@ -67,4 +67,35 @@ body {
   transition-property: opacity, top;
   transition-duration: 700ms;
   transition-timing-function: linear;
+}
+
+@media screen and (max-width: 600px) {
+  .RowRowRowTheBoat {
+    flex-direction: column;
+  }
+
+  .HelloButOusideAndUp {
+    text-align: left;
+    padding: 0px 40px;
+    width: -webkit-fill-available;
+  }
+
+  .TastyAppyBoy {
+    font-size: 20px;
+  }
+
+  .Hello {
+    font-size: 20px;
+    min-width: 0;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .Text-enter {
+    top: 25px;
+  }
+  
+  .Text-leave.Text-leave-active {
+    top: -25px;
+  }
 }
