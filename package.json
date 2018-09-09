@@ -9,11 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^9.0.0",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "classnames": "^2.2.6",
     "history": "^4.7.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
+    "react-transition-group": "^1.2.1",
     "tiny-atom": "^2.0.0"
   },
   "devDependencies": {
@@ -28,5 +32,8 @@
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

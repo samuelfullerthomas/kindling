@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import connect from '../../state/atomConnector'
 
-import styles from './FourOhFour.css'
+import './FourOhFour.css'
 
 const mapStateToProps = () => {}
 
@@ -12,10 +12,10 @@ const mapActions = [
 class FourOhFour extends Component {
   render () {
     return (
-      <div className={styles.FourOhFour}>
-        <div className={styles.TitleBoy}>404</div>
+      <div className='FourOhFour'>
+        <div className='TitleBoy'>404</div>
         <div>oh no, could not find!</div>
-        <div className={styles.Buttonboy} onClick={this.props.returnToHomepage}>return to saftey</div>
+        <div className='Buttonboy' onClick={this.props.returnToHomepage}>return to saftey</div>
       </div>
     )
   }

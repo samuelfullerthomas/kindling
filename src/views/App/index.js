@@ -1,59 +1,79 @@
 import React, { Component } from 'react'
 import connect from '../../state/atomConnector'
+import { CSSTransitionGroup } from 'react-transition-group'
 
-import styles from './App.css'
+import './App.css'
 
 const mapStateToProps = (state) => {
   return {
-    text: state.text,
-    counter: state.counter
+    text: state.text
   }
 }
 
 const mapActions = [
-  'increment',
-  'decrement',
   'setText'
 ]
 
 class App extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      value: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.interval = setInterval(::this.updateText, 2000)
   }
 
   render () {
-    const { increment, decrement, text, counter } = this.props
+    const { text } = this.props
     return (
-      <div className={styles.TastyAppyBoy}>
-        <div className={styles.Hello}>Hello and welcome to {text}!</div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Change the title of the app:
-          </label>
-          <textarea value={this.state.value} onChange={this.handleChange} />
-          <input className={styles.Buttonboy} type='submit' value='Submit' />
-        </form>
-        <div>Here be counter: {counter}</div>
-        <div className={styles.Clickyboys}>
-          <div className={styles.Buttonboy} onClick={increment}>+</div>
-          <div className={styles.Buttonboy} onClick={decrement}>-</div>
+      <div
+        className='TastyAppyBoy'
+        onMouseDown={() => { clearInterval(this.interval) }}
+        onMouseUp={() => { this.interval = setInterval(::this.updateText, 2000) }}
+      >
+        <div className='RowRowRowTheBoat'>
+          <div>
+            <h1>Kindling</h1>
+            <div className='Hello'>
+            start something
+              <CSSTransitionGroup
+                transitionName='Text'
+                transitionEnterTimeout={1000}
+                transitionLeaveTimeout={1000}>
+                <span className='Text' key={text} >{text}</span>
+              </CSSTransitionGroup>
+            </div>
+            <a
+              className='LinkyBoy'
+              href='//github.com/samuelfullerthomas/kindling'
+            >
+              Check it out on Github
+            </a>
+          </div>
+          <img className='Bane' src='/kindling.png' />
         </div>
       </div>
     )
   }
 
-  handleChange (event) {
-    this.setState({ value: event.target.value })
-  }
-
-  handleSubmit (event) {
-    event.preventDefault()
-    this.props.setText(this.state.value)
+  updateText () {
+    const { text, setText } = this.props
+    const options = [
+      'amazing',
+      'new',
+      'different',
+      'strange',
+      'cool',
+      'beautiful',
+      'wonderful',
+      'uplifting',
+      'just',
+      'today',
+      'because',
+      'now',
+      'cheerful'
+    ]
+    options.splice(options.indexOf(text), 1)
+    const random = Math.round(Math.random() * options.length)
+    const newText = options[random]
+    setText(newText)
   }
 }
 

@@ -1,57 +1,70 @@
-.TastyAppyBoy {
+body {
+  margin: 0px;
+}
+
+.TastyAppyBoy {  
+  color: #21EBF4;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
+  background-image: linear-gradient(#f47421, #FF893C);
+  height: 100%;
   font-size: 24px;
   font-family: Sans-Serif;
+}
+
+.RowRowRowTheBoat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.LinkyBoy {
+  margin-top: 20px;
+  color: #21EBF4;
 }
 
 .Hello {
   font-size: 36px;
-  margin: 10px;
   min-width: 0;
-  display: block;
+  margin-bottom: 70px;
+  position: relative;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  align-self: center;
+.Text {
+  color: white;
+  margin-left: 10px;
+  position: absolute;
 }
 
-label, textarea, input {
-  margin: 10px 0px;
+.Bane {
+  height: auto;
+  width: 300px;
 }
 
-textarea {
-  resize: none;
-  height: 100px;
+.Text-enter {
+  opacity: 0.01;
+  top: 50px;
 }
 
-.Clickyboys {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.Text-enter.Text-enter-active {
+  opacity: 1;
+  top: 0px;
+  transition-property: opacity, top;
+  transition-duration: 700ms;
+  transition-timing-function: linear;
 }
 
-.Buttonboy {
-  padding: 10px;
-  background-color: #dcfffe;
-  border: 2px solid black;
-  width: 100px;
-  margin: 10px;
-  align-self: center;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  font-family: Sans-Serif;
-  -webkit-user-select: none;       
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.Text-leave {
+  opacity: 1;
+  top: 0px;
 }
 
-.Buttonboy:hover {
-  background-color: #7cfffb;
+.Text-leave.Text-leave-active {
+  opacity: 0.01;
+  top: -50px;
+  transition-property: opacity, top;
+  transition-duration: 700ms;
+  transition-timing-function: linear;
 }
