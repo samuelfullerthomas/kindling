@@ -1,12 +1,12 @@
-.PHONY: watch build bootstrap;
+.PHONY: watch build bootstrap test;
 
 BIN=node_modules/.bin
 
 watch:
-	@NODE_ENV=development $(BIN)/webpack-dev-server --open
+	@$(BIN)/webpack-dev-server --open --mode=development
 
 build:
-	@NODE_ENV=production webpack
+	@webpack --mode=production
 
 bootstrap:
 	@npm install

@@ -28,7 +28,6 @@ module.exports = {
       }
     ]
   },
-  mode: process.env.NODE_ENV,
   output: {
     path: output,
     filename: 'bundle.js'

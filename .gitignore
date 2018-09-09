@@ -1,3 +1,5 @@
 node_modules
 dist/bundle.js
+/*.psd
+/*.png
 .DS_Store
