@@ -20,9 +20,20 @@ body {
   align-items: center;
 }
 
-.LinkyBoy {
+.ButtonyBoy {
+  cursor: pointer;
   margin-top: 20px;
-  color: #404040;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #404040;
+  color: white;
+  transition: background-color;
+  transition-duration: 200ms;
+  text-align: center;
+}
+
+.ButtonyBoy:hover {
+  background-color: #545454;
 }
 
 .Hello {
@@ -80,14 +91,18 @@ body {
     width: -webkit-fill-available;
   }
 
-  .TastyAppyBoy {
+  .ButtonyBoy {
+    width: 220px;
+  }
+
+  .TastyAppyBoy, .ButtonyBoy {
     font-size: 20px;
   }
 
   .Hello {
     font-size: 20px;
     min-width: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
   }
 

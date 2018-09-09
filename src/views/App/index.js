@@ -40,12 +40,14 @@ class App extends Component {
                 <span className='Text' key={text} >{text}</span>
               </CSSTransitionGroup>
             </div>
-            <a
-              className='LinkyBoy'
-              href='//github.com/samuelfullerthomas/kindling'
+            <div
+              className='ButtonyBoy'
+              onClick={() => {
+                window.location.href = '//github.com/samuelfullerthomas/kindling'
+              }}
             >
-              Check it out on Github
-            </a>
+              check it out on github
+            </div>
           </div>
           <img className='Bane' src='/kindling.png' alt='Kindling logo' />
         </div>
