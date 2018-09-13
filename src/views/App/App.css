@@ -2,6 +2,27 @@ body {
   margin: 0px;
 }
 
+.cls-1 {
+  fill:#fdfdfd;
+}
+.kindling:hover .cls-3{
+  fill:#e25822;
+}
+.cls-2 {
+  fill:#442d1a;
+}
+
+.cls-3 {
+  transition: fill;
+  transition-timing-function: ease;
+  transition-duration: 1000ms;
+  fill:#ffb82c;
+}
+
+.kindling {
+  width: 180px;
+}
+
 .TastyAppyBoy {  
   color: #404040;
   display: flex;
