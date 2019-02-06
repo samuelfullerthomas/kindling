@@ -1,4 +1,4 @@
-![kindling](https://user-images.githubusercontent.com/10165959/42725557-5acf9cf4-877d-11e8-9a53-7c51c1678bdf.png)
+![kindling](https://user-images.githubusercontent.com/10165959/52365396-49bdea00-2a3f-11e9-866c-9dc4d7cc8d04.png)
 
 
 # Kindling
