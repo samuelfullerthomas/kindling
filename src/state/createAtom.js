@@ -6,6 +6,8 @@ const environment = process.env.NODE_ENV
 
 const initialState = { browserHistory: createBrowserHistory(), text: 'new' }
 
-module.exports = createAtom(initialState, actions, {
-  debug: environment === 'development' ? log : false
-})
+export default function () {
+  return createAtom(initialState, actions, {
+    debug: environment === 'development' ? log : false
+  })
+}
