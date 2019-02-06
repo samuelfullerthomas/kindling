@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import connect from '../../state/atomConnector'
+import { connect } from 'tiny-atom/react'
 
 import './FourOhFour.css'
 
