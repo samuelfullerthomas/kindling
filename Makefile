@@ -6,13 +6,13 @@ watch:
 	@$(BIN)/webpack-dev-server --open --mode=development
 
 build:
-	@webpack --mode=production
+	@$(BIN)/webpack --mode=production
 
 bootstrap:
 	@npm install
 
 test:
-	@standard
+	@$(BIN)/standard
 	@$(BIN)/jest
 
 eject:
