@@ -1,84 +1,64 @@
-import React, { Component } from 'react'
-import { connect } from 'tiny-atom/react'
-import { CSSTransitionGroup } from 'react-transition-group'
+import React from 'react'
+import { useAtom, useActions } from 'tiny-atom/react/hooks'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import KindlingSVG from '../../components/KindlingSVG'
 
 import './App.css'
 
-const mapStateToProps = (state) => {
-  return {
-    text: state.text
-  }
-}
-
-const mapActions = [
-  'setText'
-]
-
-class App extends Component {
-  constructor (props) {
-    super(props)
-    this.interval = setInterval(::this.updateText, 2000)
-  }
-
-  render () {
-    const { text } = this.props
-    return (
-      <div
-        className='TastyAppyBoy'
-        onMouseDown={() => { clearInterval(this.interval) }}
-        onMouseUp={() => { this.interval = setInterval(::this.updateText, 2000) }}
-      >
-        <div className='RowRowRowTheBoat'>
-          <div className='HelloButOusideAndUp'>
-            <h1>Kindling</h1>
-            <div className='Hello'>
-            start something
-              <CSSTransitionGroup
-                transitionName='Text'
-                transitionEnterTimeout={1000}
-                transitionLeaveTimeout={1000}>
-                <span className='Text' key={text} >{text}</span>
-              </CSSTransitionGroup>
-            </div>
-            <div
-              className='ButtonyBoy'
-              onClick={() => {
-                window.location.href = '//github.com/samuelfullerthomas/kindling'
-              }}
-            >
-              check it out on github
-            </div>
+ function App () {
+  const text = useAtom(state => state.text)
+  const { setText } = useActions()
+  const boundUpdate = updateText.bind(null, text, setText)
+  setTimeout(boundUpdate, 4000)
+ 
+  return (
+    <div
+      className='TastyAppyBoy'
+    >
+      <div className='RowRowRowTheBoat'>
+        <div className='HelloButOusideAndUp'>
+          <h1>Kindling</h1>
+          <div className='Hello'>
+          start something
+            <TransitionGroup component='span'>
+              <CSSTransition classNames='Text' key={text + Math.random()} timeout={{ exit: 2000, enter: 2000 }}>
+                <span className='Text'>{text}</span>
+              </CSSTransition>
+            </TransitionGroup>
           </div>
-          <KindlingSVG className='kindling' />
+          <div
+            className='ButtonyBoy'
+            onClick={() => {
+              window.location.href = '//github.com/samuelfullerthomas/kindling'
+            }}
+          >
+            check it out on github
+          </div>
         </div>
+        <KindlingSVG className='kindling' />
       </div>
-    )
-  }
-
-  updateText () {
-    const { text, setText } = this.props
-    const options = [
-      'amazing',
-      'new',
-      'different',
-      'strange',
-      'cool',
-      'beautiful',
-      'wonderful',
-      'uplifting',
-      'just',
-      'today',
-      'because',
-      'now',
-      'cheerful'
-    ]
-    options.splice(options.indexOf(text), 1)
-    const random = Math.round(Math.random() * options.length)
-    const newText = options[random]
-    setText(newText)
-  }
+    </div>
+  )
 }
 
-export default connect(mapStateToProps, mapActions)(App)
+function updateText (text, setText) {
+  const options = [
+    'amazing',
+    'viral',
+    'astronomic',
+    'different',
+    'strange',
+    'beautiful',
+    'wonderful',
+    'uplifting',
+    'just',
+    'joyful'
+  ]
+  options.splice(options.indexOf(text), 1)
+  const random = Math.round(Math.random() * options.length)
+  const newText = options[random]
+  setText(newText)
+}
+
+export default App

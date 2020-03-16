@@ -65,7 +65,9 @@ body {
 }
 
 .Text {
+  text-shadow: 0 0 15px #21A1F4;
   color: white;
+  letter-spacing: .1em;
   margin-left: 10px;
   position: absolute;
 }
@@ -88,12 +90,12 @@ body {
   transition-timing-function: linear;
 }
 
-.Text-leave {
+.Text-exit {
   opacity: 1;
   top: 0px;
 }
 
-.Text-leave.Text-leave-active {
+.Text-exit.Text-exit-active {
   opacity: 0.01;
   top: -50px;
   transition-property: opacity, top;
