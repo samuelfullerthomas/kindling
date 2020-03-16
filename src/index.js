@@ -19,10 +19,10 @@ createRouter([
 
 async function render (route, components) {
   const initialAtom = await atom()
-  let view = components.reduceRight((children, Component) =>
+  const view = components.reduceRight((children, Component) =>
     <Provider atom={initialAtom}>
       <Component params={route.params}>{children}</Component>
     </Provider>
-    , null)
+  , null)
   ReactDOM.render(view, document.querySelector('#root'))
 }
