@@ -10,13 +10,12 @@ function updateText (text, setText) {
   const options = [
     'amazing',
     'viral',
-    'astronomic',
+    'stellar',
     'different',
     'strange',
     'beautiful',
     'wonderful',
     'uplifting',
-    'just',
     'joyful'
   ]
   options.splice(options.indexOf(text), 1)
